@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">HealthApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_clientoptions">clientoptions</string>
+    <string name="title_activity_calculate_bmi">calculateBmi</string>
+    <string name="title_activity_food_calories">foodCalories</string>
+    <string-array name="foods_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+    <string name="title_activity_calculate_calories">calculate_calories</string>
+</resources>
