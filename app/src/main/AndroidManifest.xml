@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.healthapp" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,7 +30,10 @@
             android:name=".calculate_calories"
             android:label="@string/title_activity_calculate_calories" >
         </activity>
+        <activity
+            android:name=".Calories_Burned"
+            android:label="@string/title_activity_calories__burned" >
+        </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

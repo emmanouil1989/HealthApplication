@@ -17,4 +17,5 @@
         <item>Neptune</item>
     </string-array>
     <string name="title_activity_calculate_calories">calculate_calories</string>
+    <string name="title_activity_calories__burned">Calories_Burned</string>
 </resources>

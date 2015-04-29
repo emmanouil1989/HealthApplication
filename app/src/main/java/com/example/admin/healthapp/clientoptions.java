@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class clientoptions extends ActionBarActivity {
 
-    private Button btnBmi,btnCalories,btnTarget;
+    private Button btnBmi,btnCalories,btnTarget,btnBurned;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class clientoptions extends ActionBarActivity {
         btnBmi = (Button) findViewById(R.id.bmi);
         btnCalories = (Button) findViewById(R.id.calories);
         btnTarget = (Button) findViewById(R.id.target);
+        btnBurned = (Button) findViewById(R.id.caloriesburned);
 
         btnBmi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +31,13 @@ public class clientoptions extends ActionBarActivity {
                 clientoptions.this.startActivity(bimIntent);
 
 
+            }
+        });
+        btnBurned.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent burnedIntent = new Intent(clientoptions.this,Calories_Burned.class);
+                clientoptions.this.startActivity(burnedIntent);
             }
         });
 

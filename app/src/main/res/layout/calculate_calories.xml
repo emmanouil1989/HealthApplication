@@ -36,7 +36,8 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4"
-        android:height="40dp" />
+        android:height="40dp"
+        android:inputType="phone" />
 
     <Button
         android:layout_width="wrap_content"

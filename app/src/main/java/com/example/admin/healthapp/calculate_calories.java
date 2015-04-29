@@ -1,11 +1,13 @@
 package com.example.admin.healthapp;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -35,11 +37,13 @@ public class calculate_calories extends ActionBarActivity  {
     private List<String> calorieslist = new ArrayList<String>();
     private double call1,total;
     private double call2;
-
+    private  ArrayAdapter  <String> adapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculate_calories);
         searchtxt =(EditText) findViewById(R.id.userinput);
@@ -47,26 +51,42 @@ public class calculate_calories extends ActionBarActivity  {
 
         btnSearch =(Button) findViewById(R.id.foodsearch);
         resultsview = (ListView) findViewById(R.id.foodresults);
-       final ArrayAdapter  <String> adapter = new ArrayAdapter<String>(this
-                ,android.R.layout.simple_list_item_1,itemmList);
 
 
-
+        adapter=   new ArrayAdapter<String>
+                (calculate_calories.this,android.R.layout.simple_list_item_1,itemmList);
+        resultsview.setAdapter(adapter);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                 /* Search food from API and call showData method for display in listview*/
+                itemmList.clear();
             String food = searchtxt.getText().toString();
 
                 fetchJSON("http://api.nutritionix.com/v1_1/search/"+food+
                         "?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%" +
                         "2Cnf_total_fat&appId=57e2c990&appKey=127ef21aa96e931fdac63e5a3684a5f5");
-                itemmList.clear();
-                resultsview.setAdapter(adapter);
+
+
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
+
+
+
+
+
+
+
             }
         });
 
 
+        /* ListView click event for calculation the total calories */
 
         resultsview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -88,6 +108,15 @@ public class calculate_calories extends ActionBarActivity  {
 
 
     }
+
+    /* Display tha data from Arraylist to listView*/
+    public void showData(){
+        adapter=   new ArrayAdapter<String>
+                (calculate_calories.this,android.R.layout.simple_list_item_1,itemmList);
+        resultsview.setAdapter(adapter);
+
+    }
+    /* Get API data*/
     public void fetchJSON(final String urlString)
     {
         Thread thread = new Thread(new Runnable() {
@@ -120,6 +149,14 @@ public class calculate_calories extends ActionBarActivity  {
             }
         });
         thread.start();
+        try {
+            thread.join();
+        }
+        catch (Exception e)
+        {
+
+        }
+        showData();
     }
 
 
@@ -153,6 +190,7 @@ public class calculate_calories extends ActionBarActivity  {
         return sb.toString();
     }
 
+        /* Read data from API and add it to arrayList of Strings */
     public void readAndParseJSON(String in)
     {
         try
@@ -187,6 +225,8 @@ public class calculate_calories extends ActionBarActivity  {
 
                 itemmList.add(allStrings);
                 calorieslist.add(itCalories);
+
+
                 Log.v("JSONExample", "item_name " + itemName);
                 Log.v("JSONExample", "nf_calories " + itCalories);
 
