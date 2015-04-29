@@ -21,7 +21,7 @@ import java.util.Set;
 public class Calories_Burned extends ActionBarActivity {
     private Button btnCalc;
     private Spinner sp1,sp2,sp3,sp4,sp5,sp6,sp7,sp8;
-    private EditText txtResults;
+    private EditText txtResults,txtWeight;
     private HashMap<String,String> exercise = new HashMap<String,String>();
     private ArrayList<String> times= new ArrayList<String>();
     private ArrayList<String> exerciseList= new ArrayList<String>();
@@ -75,10 +75,26 @@ public class Calories_Burned extends ActionBarActivity {
         sp8.setAdapter(adapter);
 
 
-        exercise.put("Running","8");
-        exercise.put("walking","8");
-        exercise.put("Busketball","8");
-        exercise.put("Football","8");
+         exercise.put("Running","7");
+        exercise.put("Swimming","10");
+        exercise.put("Volleyball","8");
+        exercise.put("Beach Volley","8");
+        exercise.put("Gymnastics","4");
+        exercise.put("Weight lifting","6");
+        exercise.put("Aerobic","6.5");
+        exercise.put("Bycycling","8");
+        exercise.put("Rowing","12");
+        exercise.put("Archery","3.5");
+        exercise.put("Cricket","5");
+        exercise.put("Tennis","7");
+        exercise.put("Horseback","4");
+        exercise.put("Judo","10");
+        exercise.put("Polo","8");
+        exercise.put("Boxing","12");
+        exercise.put("Rugby","10");
+        exercise.put("walking","7");
+        exercise.put("Basketball","8");
+        exercise.put("Football","9");
 
 
         Set set = exercise.entrySet();
