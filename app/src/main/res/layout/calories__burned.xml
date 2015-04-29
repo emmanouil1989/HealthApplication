@@ -9,14 +9,34 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Your weight (Kg):"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginBottom="35dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:id="@+id/weight" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/weight"
+        android:layout_toRightOf="@+id/weight"
+        android:layout_toEndOf="@+id/weight"
+        android:layout_marginLeft="20dp"
+        android:inputType="phone"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weight"
         android:id="@+id/textView"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_marginRight="120dp"
         android:text="Exercise"
-        android:layout_above="@+id/spinner2" />
+        android:layout_marginTop="40dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,12 +49,12 @@
         android:layout_toEndOf="@+id/textView" />
 
 
+
     <Spinner
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/spinner"
-
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="150dp"
         android:layout_marginRight="10dp" />
 
     <Spinner
@@ -108,7 +128,7 @@
         android:text="Calculate"
         android:id="@+id/calculate"
         android:layout_below="@+id/spinner7"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:layout_marginLeft="120dp"
 />
 
