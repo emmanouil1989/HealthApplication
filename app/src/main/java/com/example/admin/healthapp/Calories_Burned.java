@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -18,13 +21,21 @@ import java.util.Map;
 import java.util.Set;
 
 
-public class Calories_Burned extends ActionBarActivity {
+public class Calories_Burned extends ActionBarActivity   {
     private Button btnCalc;
     private Spinner sp1,sp2,sp3,sp4,sp5,sp6,sp7,sp8;
-    private EditText txtResults;
+    private EditText txtResults,txtWeight;
     private HashMap<String,String> exercise = new HashMap<String,String>();
     private ArrayList<String> times= new ArrayList<String>();
     private ArrayList<String> exerciseList= new ArrayList<String>();
+    private String min1,min2,min3,min4,min5,min6,min7,min8;
+    private double time1,time2,time3,time4,time5,time6,time7,time8,totaltime,totalmets;
+    private double mets1,mets2,mets3,mets4,mets5,mets6,mets7,mets8;
+    private static double value = 0.0175;
+    private static double totalCaloriesBurned = 0;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,13 +50,146 @@ public class Calories_Burned extends ActionBarActivity {
         sp7 = (Spinner) findViewById(R.id.spinner7);
         sp8 = (Spinner) findViewById(R.id.spinner8);
         txtResults = (EditText) findViewById(R.id.results);
+        txtWeight = (EditText) findViewById(R.id.userweight);
+
         populateSpinner();
+
+
+
+
+
         btnCalc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+
+
+                if (txtWeight.getText().toString().length()==0){
+
+                    Toast.makeText(Calories_Burned.this, "Please give your weight",
+                            Toast.LENGTH_LONG).show();
+
+                }else {
+                    double userWeight = Double.parseDouble(txtWeight.getText().toString());
+
+                    time1 = Double.parseDouble(min2);
+                    time2 = Double.parseDouble(min4);
+                    time3 = Double.parseDouble(min6);
+                    time4 = Double.parseDouble(min8);
+
+                    mets1 = Double.parseDouble(exercise.get(min1));
+                    mets2 = Double.parseDouble(exercise.get(min3));
+                    mets3 = Double.parseDouble(exercise.get(min5));
+                    mets4 = Double.parseDouble(exercise.get(min7));
+
+                    totalCaloriesBurned= caloriesPerMinute(mets1,userWeight,time1)+
+                    caloriesPerMinute(mets2,userWeight,time2)+caloriesPerMinute(mets3,userWeight,time3)
+                    +caloriesPerMinute(mets4,userWeight,time4);
+
+                    DecimalFormat form = new DecimalFormat("0.00");
+                    txtResults.setText(form.format(totalCaloriesBurned));
+
+                }
+
+
             }
         });
+        sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                min1 = exerciseList.get(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        sp2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                min2 = times.get(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        sp3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                min3 = exerciseList.get(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        sp4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                min4 = times.get(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        sp5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                min5 = exerciseList.get(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        sp6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                min6 = times.get(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        sp7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                min7 = exerciseList.get(position).toString();;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        sp8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                min8 = times.get(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+     
     }
 
     public void populateSpinner()
@@ -75,10 +219,27 @@ public class Calories_Burned extends ActionBarActivity {
         sp8.setAdapter(adapter);
 
 
-        exercise.put("Running","8");
-        exercise.put("walking","8");
-        exercise.put("Busketball","8");
-        exercise.put("Football","8");
+
+        exercise.put("Running","7");
+        exercise.put("Swimming","10");
+        exercise.put("Volleyball","8");
+        exercise.put("Beach Volley","8");
+        exercise.put("Gymnastics","4");
+        exercise.put("Weight lifting","6");
+        exercise.put("Aerobic","6.5");
+        exercise.put("Bicycling","8");
+        exercise.put("Rowing","12");
+        exercise.put("Archery","3.5");
+        exercise.put("Cricket","5");
+        exercise.put("Tennis","7");
+        exercise.put("Horseback","4");
+        exercise.put("Judo","10");
+        exercise.put("Polo","8");
+        exercise.put("Boxing","12");
+        exercise.put("Rugby","10");
+        exercise.put("walking","7");
+        exercise.put("Basketball","8");
+        exercise.put("Football","9");
 
 
         Set set = exercise.entrySet();
@@ -98,7 +259,11 @@ public class Calories_Burned extends ActionBarActivity {
         sp7.setAdapter(adapter2);
 
 
+    }
 
+
+    public static double caloriesPerMinute(double met, double weight, double time) {
+        return value * met * weight * time;
     }
 
     @Override
@@ -122,4 +287,7 @@ public class Calories_Burned extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }

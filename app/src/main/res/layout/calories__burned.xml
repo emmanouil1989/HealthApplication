@@ -24,6 +24,7 @@
         android:layout_toRightOf="@+id/weight"
         android:layout_toEndOf="@+id/weight"
         android:layout_marginLeft="20dp"
+        android:id="@+id/userweight"
         android:inputType="phone"/>
 
 
