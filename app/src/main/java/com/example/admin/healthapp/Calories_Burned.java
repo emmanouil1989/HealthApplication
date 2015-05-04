@@ -70,7 +70,7 @@ public class Calories_Burned extends ActionBarActivity   {
                             Toast.LENGTH_LONG).show();
 
                 }else {
-                    double userWeight = Double.parseDouble(txtWeight.getText().toString());
+                    double userWeight = Double.parseDouble(txtWeight.getText().toString().trim());
 
                     time1 = Double.parseDouble(min2);
                     time2 = Double.parseDouble(min4);

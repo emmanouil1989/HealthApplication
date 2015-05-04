@@ -58,6 +58,8 @@ public class clientoptions extends ActionBarActivity {
         btnTarget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent targetIntent = new Intent(clientoptions.this,SetTarget.class);
+                clientoptions.this.startActivity(targetIntent);
 
             }
         });

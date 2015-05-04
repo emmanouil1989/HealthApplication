@@ -34,6 +34,10 @@
             android:name=".Calories_Burned"
             android:label="@string/title_activity_calories__burned" >
         </activity>
+        <activity
+            android:name=".SetTarget"
+            android:label="@string/title_activity_set_target" >
+        </activity>
     </application>
 
 </manifest>
