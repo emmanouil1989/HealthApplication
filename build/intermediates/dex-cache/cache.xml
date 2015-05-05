@@ -9,18 +9,25 @@
         <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\classes-8cb474c0ddca56764dc9b05aca2edc76533db9dd.jar" />
     </item>
     <item
-        jar="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\classes-cd2cdc83b7ea8cb17cf16b24eee3951b4056f656.jar" />
-    </item>
-    <item
         jar="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
         <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-705d14dbdafde5ecd9d1f4e3766edc2446d3c6c3.jar" />
+    </item>
+    <item
+        jar="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\libs\mpandroidchartlibrary-2-0-9.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="db5a003a317b20269d6fbedcf9ee8917d6a66fff">
+        <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\mpandroidchartlibrary-2-0-9-7596daf8bc49f5ed59e090e80e946f393120998c.jar" />
+    </item>
+    <item
+        jar="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\classes-cd2cdc83b7ea8cb17cf16b24eee3951b4056f656.jar" />
     </item>
     <item
         jar="C:\Users\user.TRJ10-20.002\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"

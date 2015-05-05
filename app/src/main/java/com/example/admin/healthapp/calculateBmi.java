@@ -2,6 +2,7 @@ package com.example.admin.healthapp;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -162,12 +163,8 @@ public class calculateBmi extends ActionBarActivity {
         }
         else if(id==R.id.action_show)
         {
-            //db.getAllBmi();
-            ArrayList<String> dbData = db.getAllBmi();
-            for (String name : dbData) {
-
-            }
-            Toast.makeText(calculateBmi.this,"Show",Toast.LENGTH_LONG).show();
+            Intent BmiChart = new Intent(calculateBmi.this,Bmi_Chart.class);
+            calculateBmi.this.startActivity(BmiChart);
         }
 
         //noinspection SimplifiableIfStatement

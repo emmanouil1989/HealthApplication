@@ -1,6 +1,7 @@
 package com.example.admin.healthapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -302,11 +303,12 @@ public class calculate_calories extends ActionBarActivity  {
         }
         else if(id==R.id.action_show)
         {
-            ArrayList<String> dbData = db.getAllConsumed();
-            for (String name : dbData) {
-                Toast.makeText(calculate_calories.this,name,Toast.LENGTH_SHORT).show();
-            }
-            Toast.makeText(calculate_calories.this,"show",Toast.LENGTH_LONG).show();
+
+            Intent CalcCalChartIntent = new Intent(calculate_calories.this,Calculate_calories_Chart.class);
+            calculate_calories.this.startActivity(CalcCalChartIntent);
+
+
+
         }
 
         //noinspection SimplifiableIfStatement

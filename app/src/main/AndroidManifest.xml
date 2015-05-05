@@ -38,6 +38,18 @@
             android:name=".SetTarget"
             android:label="@string/title_activity_set_target" >
         </activity>
+        <activity
+            android:name=".Calculate_calories_Chart"
+            android:label="@string/title_activity_calculate_calories__chart" >
+        </activity>
+        <activity
+            android:name=".Calories_Burned_Chart"
+            android:label="@string/title_activity_calories__burned__chart" >
+        </activity>
+        <activity
+            android:name=".Bmi_Chart"
+            android:label="@string/title_activity_bmi__chart" >
+        </activity>
     </application>
 
 </manifest>
