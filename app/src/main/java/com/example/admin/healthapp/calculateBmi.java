@@ -61,25 +61,39 @@ public class calculateBmi extends ActionBarActivity {
                     alertbox.show();
 
                 }else {
+                        Log.v("age",String.valueOf(age));
+                    if (age >= 25 ) {
+                        result = calculateResult(weight, height);
+                        bmiInterpetation = interpretBMI(result);
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(calculateBmi.this);
+                        result = (float) Math.round(result * 10) / 10;
+                        builder1.setMessage(String.valueOf(result) + "-" + String.valueOf(bmiInterpetation));
+                        builder1.setCancelable(false);
+                        builder1.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
 
+                        AlertDialog alertbox1 = builder1.create();
+                        alertbox1.show();
+                    }else
+                    {
+                        AlertDialog.Builder builder2 = new AlertDialog.Builder(calculateBmi.this);
+                        builder2.setMessage("You have be above 18");
+                        builder2.setCancelable(false);
+                        builder2.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
 
-                    result = calculateResult(weight, height);
-                    bmiInterpetation = interpretBMI(result, age);
+                        AlertDialog alertbox2 = builder2.create();
+                        alertbox2.show();
 
-
-                    AlertDialog.Builder builder1 = new AlertDialog.Builder(calculateBmi.this);
-                    result=  (float)Math.round(result * 10) / 10 ;
-                    builder1.setTitle(result + "-" + bmiInterpetation);
-                    builder1.setCancelable(false);
-                    builder1.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-
-                    AlertDialog alertbox1 = builder1.create();
-                    alertbox1.show();
+                    }
 
                 }
 
@@ -94,11 +108,10 @@ public class calculateBmi extends ActionBarActivity {
         return (float) (weight / (height * height));
     }
 
-    public String interpretBMI(float result,float age1)
+    public String interpretBMI(float result)
     {
 
-        if (age1 > 18)
-        {
+
           if (result < 16)
           {
               return "Severely underweight";
@@ -119,10 +132,7 @@ public class calculateBmi extends ActionBarActivity {
           {
               return "Gravely overweight";
           }
-        }else
-        {
-            return " You are under 18";
-        }
+
 
 
 
