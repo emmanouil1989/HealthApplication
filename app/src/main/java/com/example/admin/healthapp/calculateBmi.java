@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class calculateBmi extends ActionBarActivity {
 
@@ -19,12 +22,15 @@ public class calculateBmi extends ActionBarActivity {
     private Button btnBmi;
     private float weight,height,result, age;
     private String bmiInterpetation ;
+    private MySQLLiteHelperBmi db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculate_bmi);
 
+
+        db = new MySQLLiteHelperBmi(this);
         weighttxt = (EditText) findViewById(R.id.weightfield);
         heighttxt = (EditText) findViewById(R.id.heightfield);
         agetxt = (EditText) findViewById(R.id.agefield);
@@ -136,6 +142,33 @@ public class calculateBmi extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        if(id == R.id.action_delete)
+        {
+            db.deleteAllData();
+        }
+        else if(id==R.id.action_save)
+        {
+            if(result == 0)
+            {
+                Toast.makeText(calculateBmi.this,"Please calculate BMI",Toast.LENGTH_LONG).show();
+            }else
+            {
+                String res = String.valueOf(result);
+                db.insertBmi(res);
+                result = 0;
+                Toast.makeText(calculateBmi.this, "Data Data Inserted Successfully", Toast.LENGTH_LONG).show();
+            }
+        }
+        else if(id==R.id.action_show)
+        {
+            //db.getAllBmi();
+            ArrayList<String> dbData = db.getAllBmi();
+            for (String name : dbData) {
+
+            }
+            Toast.makeText(calculateBmi.this,"Show",Toast.LENGTH_LONG).show();
+        }
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {

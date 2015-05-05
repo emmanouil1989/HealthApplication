@@ -146,7 +146,7 @@ public class SetTarget extends ActionBarActivity {
         activityList.put("Sedentary (little or no exercise)", "1.2");
         activityList.put("Lightly Active (1-3 days per week)", "1.375");
         activityList.put("Moderately Active (3-5 days per week)", "1.55");
-        activityList.put("ery Active ( 6 or 7 days per week)", "1.725");
+        activityList.put("Very Active ( 6 or 7 days per week)", "1.725");
         activityList.put("Extra Active ( hard training)", "1.9");
 
         Set set = activityList.entrySet();

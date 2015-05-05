@@ -4,4 +4,12 @@
     tools:context="com.example.admin.healthapp.calculate_calories">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/action_save" android:title="Save"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_delete" android:title="Delete"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_show" android:title="Show"
+        android:orderInCategory="100" app:showAsAction="never" />
+
 </menu>

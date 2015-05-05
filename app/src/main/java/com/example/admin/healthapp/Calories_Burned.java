@@ -33,6 +33,7 @@ public class Calories_Burned extends ActionBarActivity   {
     private double mets1,mets2,mets3,mets4,mets5,mets6,mets7,mets8;
     private static double value = 0.0175;
     private static double totalCaloriesBurned = 0;
+    private MySQLLiteHelper db;
 
 
 
@@ -40,6 +41,10 @@ public class Calories_Burned extends ActionBarActivity   {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calories__burned);
+
+        db = new MySQLLiteHelper(this);
+
+
         btnCalc = (Button) findViewById(R.id.calculate);
         sp1 = (Spinner) findViewById(R.id.spinner);
         sp2 = (Spinner) findViewById(R.id.spinner2);
@@ -279,6 +284,36 @@ public class Calories_Burned extends ActionBarActivity   {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        if(id == R.id.action_delete)
+        {
+            db.deleteAllData();
+
+        }
+        else if(id==R.id.action_save)
+        {
+            if(txtResults.getText().toString().length()>0)
+            {
+                String result = txtResults.getText().toString().trim();
+                db.insertBunred(result);
+                txtResults.setText(" ");
+                Toast.makeText(Calories_Burned.this,"Data Data Inserted Successfully",Toast.LENGTH_LONG).show();
+
+            }else {
+
+                Toast.makeText(Calories_Burned.this, "Please Enter a value", Toast.LENGTH_LONG).show();
+            }
+
+        }
+        else if(id==R.id.action_show)
+        {
+            ArrayList<String> dbData = db.getAllBunred();
+            for (String name : dbData) {
+                Toast.makeText(Calories_Burned.this,name,Toast.LENGTH_SHORT).show();
+            }
+            Toast.makeText(Calories_Burned.this,"show",Toast.LENGTH_LONG).show();
+        }
+
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {

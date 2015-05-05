@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -38,6 +39,7 @@ public class calculate_calories extends ActionBarActivity  {
     private double call1,total;
     private double call2;
     private  ArrayAdapter  <String> adapter;
+    private MySQLLiteHelperCalculateCalories db;
 
 
     @Override
@@ -46,6 +48,8 @@ public class calculate_calories extends ActionBarActivity  {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculate_calories);
+
+        db = new MySQLLiteHelperCalculateCalories(this);
         searchtxt =(EditText) findViewById(R.id.userinput);
         totaltxt = (EditText) findViewById(R.id.caloriestotal);
 
@@ -275,6 +279,35 @@ public class calculate_calories extends ActionBarActivity  {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        if(id == R.id.action_delete)
+        {
+            db.deleteAllData();
+
+        }
+        else if(id==R.id.action_save)
+        {
+            if(totaltxt.getText().toString().length()>0)
+            {
+                String result = totaltxt.getText().toString().trim();
+                db.insertConsumed(result);
+                totaltxt.setText(" ");
+                Toast.makeText(calculate_calories.this, "Data Data Inserted Successfully", Toast.LENGTH_LONG).show();
+
+            }else {
+
+                Toast.makeText(calculate_calories.this, "Please Enter a value", Toast.LENGTH_LONG).show();
+            }
+
+        }
+        else if(id==R.id.action_show)
+        {
+            ArrayList<String> dbData = db.getAllConsumed();
+            for (String name : dbData) {
+                Toast.makeText(calculate_calories.this,name,Toast.LENGTH_SHORT).show();
+            }
+            Toast.makeText(calculate_calories.this,"show",Toast.LENGTH_LONG).show();
+        }
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
