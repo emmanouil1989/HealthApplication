@@ -49,7 +49,8 @@ public class SetTarget extends ActionBarActivity {
         spActivity = (Spinner) findViewById(R.id.dailyActivity);
 
         populateSpinners();
-
+    /* take data from textfields. Check the gender call the calculte methods and display the results into
+     * AlertDialog  */
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,6 +114,7 @@ public class SetTarget extends ActionBarActivity {
 
             }
         });
+        /* take data from arrayList and pass to a string*/
 
         spGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -143,6 +145,8 @@ public class SetTarget extends ActionBarActivity {
 
     public void populateSpinners()
     {
+
+        /* Values added to arraylist and hashmap  */
         genderList.add("Male");
         genderList.add("Female");
 
@@ -159,7 +163,7 @@ public class SetTarget extends ActionBarActivity {
             Map.Entry me = (Map.Entry)i.next();
             factorsList.add(me.getKey().toString());
         }
-
+  /* arraylist added to ListView and style it */
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genderList){
                     @Override
@@ -171,7 +175,7 @@ public class SetTarget extends ActionBarActivity {
                     }
                 };
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
+        /* arraylist added to ListView and style it */
         ArrayAdapter<String> adapter2 =
                 new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, factorsList){
                     @Override

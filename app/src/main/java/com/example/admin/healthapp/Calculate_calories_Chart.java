@@ -24,12 +24,14 @@ public class Calculate_calories_Chart extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate_calories__chart);
         db = new MySQLLiteHelperCalculateCalories(this);
-
+         /*  Two arraylist created to display the data into the chart*/
         ArrayList<BarEntry> entries = new ArrayList<>();
         ArrayList<String> labels = new ArrayList<String>();
 
         ArrayList<String> dbData = db.getAllConsumed();
-
+        /* a loop to take the data from data base. The getALLBmi method return an ArryList with data
+      * from the data base. The loop take the data from one ArrayList and add it to entries ArrayList
+      * which is used to display the data into the Chart*/
         for (String name : dbData) {
             float test = Float.parseFloat(name);
             entries.add(new BarEntry(test,i++));
@@ -42,7 +44,7 @@ public class Calculate_calories_Chart extends ActionBarActivity {
 
 
 
-
+        /* New BarDataSet instance from a chart libray to display chart data*/
         BarDataSet dataset = new BarDataSet(entries, "Calories Consumed by user");
 
         dataset.setColors(ColorTemplate.COLORFUL_COLORS);

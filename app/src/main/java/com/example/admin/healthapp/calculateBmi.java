@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
+/* BMI class to calculate user BMI*/
 public class calculateBmi extends ActionBarActivity {
 
     private EditText weighttxt,heighttxt,agetxt,displaytxt;
@@ -41,6 +41,8 @@ public class calculateBmi extends ActionBarActivity {
         btnBmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /* First check if textfields are empty. If yes an AlertDialog appears to notify user
+                 * if no it's call methods to calculate BMI. And diplay the result in AlertDialog */
                 weight = Float.parseFloat(weighttxt.getText().toString().trim());
                 height = Float.parseFloat(heighttxt.getText().toString().trim());
                 age = Float.parseFloat(agetxt.getText().toString().trim());
@@ -86,7 +88,7 @@ public class calculateBmi extends ActionBarActivity {
         });
 
     }
-
+    /*Calculate BMI */
     public float calculateResult (float weight,float height)
     {
         height = height /100;
@@ -95,7 +97,7 @@ public class calculateBmi extends ActionBarActivity {
 
     public String interpretBMI(float result)
     {
-
+        /* Check the user weight category */
 
           if (result < 16)
           {

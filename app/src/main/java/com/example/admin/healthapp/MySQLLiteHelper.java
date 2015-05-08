@@ -21,7 +21,7 @@ public class MySQLLiteHelper extends SQLiteOpenHelper {
     private static final String TABLE_CALORIES_BURNED="burned";
 
 
-
+ /* A database class to create a database table and methods to insert,delete,show methods*/
 
     private static final String KEY_BURNED = "burned";
 

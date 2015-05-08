@@ -67,7 +67,8 @@ public class Calories_Burned extends ActionBarActivity   {
         btnCalc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            /* Take user input data and call totalCaloriesBurned method to calculate user burned calories
+             *  */
 
 
                 if (txtWeight.getText().toString().length()==0){
@@ -82,7 +83,7 @@ public class Calories_Burned extends ActionBarActivity   {
                     time2 = Double.parseDouble(min4);
                     time3 = Double.parseDouble(min6);
                     time4 = Double.parseDouble(min8);
-
+                    /* mets varialible is equal with the key-pair value from hashmap */
                     mets1 = Double.parseDouble(exercise.get(min1));
                     mets2 = Double.parseDouble(exercise.get(min3));
                     mets3 = Double.parseDouble(exercise.get(min5));
@@ -97,7 +98,7 @@ public class Calories_Burned extends ActionBarActivity   {
 
                 }
 
-
+            /* take user spinner choise and pass to a string varialiable */
             }
         });
         sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -200,7 +201,7 @@ public class Calories_Burned extends ActionBarActivity   {
 
     public void populateSpinner()
     {
-
+        /* Values added to arraylist and hashmap  */
         times.add("0");
         times.add("5");
         times.add("10");
@@ -214,7 +215,7 @@ public class Calories_Burned extends ActionBarActivity   {
         times.add("50");
         times.add("55");
         times.add("60");
-
+        /* The arrayList added to a listView*/
         ArrayAdapter<String> adapter =
          new ArrayAdapter<String>(this,  R.layout.spinner_item_text, times);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -247,7 +248,7 @@ public class Calories_Burned extends ActionBarActivity   {
         exercise.put("Basketball","8");
         exercise.put("Football","9");
 
-
+    /* Iterate throw hashMap to take key from hasmap and added to arrayList. */
         Set set = exercise.entrySet();
         Iterator i = set.iterator();
 
@@ -255,6 +256,7 @@ public class Calories_Burned extends ActionBarActivity   {
             Map.Entry me = (Map.Entry)i.next();
             exerciseList.add(me.getKey().toString());
         }
+        /* the arrayList with hashMap values is used to display into listView*/
         ArrayAdapter<String> adapter2 =
                 new ArrayAdapter<String>(this, R.layout.spinner_item_text, exerciseList);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -285,7 +287,8 @@ public class Calories_Burned extends ActionBarActivity   {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        /*Option menu to call database class methods to insert,delete data. And new activity called
+         * to display data into a chart */
         if(id == R.id.action_delete)
         {
             db.deleteAllData();

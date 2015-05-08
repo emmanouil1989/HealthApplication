@@ -280,9 +280,10 @@ public class calculate_calories extends ActionBarActivity  {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        /* Option menu to save,delete,show data*/
         if(id == R.id.action_delete)
         {
+              /* Call a method from database class to delete the data from the database */
             db.deleteAllData();
 
         }
@@ -290,6 +291,8 @@ public class calculate_calories extends ActionBarActivity  {
         {
             if(totaltxt.getText().toString().length()>0)
             {
+                  /* Get result number from text field and call insertConsumed method from database class
+                   * to insert the data */
                 String result = totaltxt.getText().toString().trim();
                 db.insertConsumed(result);
                 totaltxt.setText(" ");
@@ -303,7 +306,7 @@ public class calculate_calories extends ActionBarActivity  {
         }
         else if(id==R.id.action_show)
         {
-
+              /* A chart activity start to display the data into a chart */
             Intent CalcCalChartIntent = new Intent(calculate_calories.this,Calculate_calories_Chart.class);
             calculate_calories.this.startActivity(CalcCalChartIntent);
 

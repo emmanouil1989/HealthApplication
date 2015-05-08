@@ -20,6 +20,8 @@ public class MySQLLiteHelperBmi extends SQLiteOpenHelper {
     private static final String TABLE_BMI = "bmi";
     private static final String KEY_BMI = "bmi";
 
+     /* A database class to create a database table and methods to insert,delete,show methods*/
+
     public MySQLLiteHelperBmi(Context context)
     {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);

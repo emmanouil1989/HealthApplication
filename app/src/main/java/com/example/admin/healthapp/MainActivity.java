@@ -20,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                  /* Create an Intent that will start the Calculate_bmi activity */
+                  /* Create an Intent that will start the Calculate_bmi activity and display a splash*/
                 Intent mainIntent = new Intent(MainActivity.this, clientoptions.class);
                 MainActivity.this.startActivity(mainIntent);
                 MainActivity.this.finish();

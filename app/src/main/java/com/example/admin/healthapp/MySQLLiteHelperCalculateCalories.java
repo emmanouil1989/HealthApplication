@@ -20,6 +20,8 @@ public class MySQLLiteHelperCalculateCalories extends SQLiteOpenHelper {
     private static final String TABLE_CALORIES_CONSUMED = "consumed";
     private static final String KEY_CONSUMED = "consumed";
 
+     /* A database class to create a database table and methods to insert,delete,show methods*/
+
     public MySQLLiteHelperCalculateCalories(Context context)
     {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);

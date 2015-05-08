@@ -23,10 +23,12 @@ public class Calories_Burned_Chart extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calories__burned__chart);
         db = new MySQLLiteHelper(this);
-
+/*  Two arraylist created to display the data into the chart*/
         ArrayList<BarEntry> entries = new ArrayList<>();
         ArrayList<String> labels = new ArrayList<String>();
-
+         /* a loop to take the data from data base. The getALLBmi method return an ArryList with data
+      * from the data base. The loop take the data from one ArrayList and add it to entries ArrayList
+      * which is used to display the data into the Chart*/
         ArrayList<String> dbData = db.getAllBunred();
 
         for (String name : dbData) {
