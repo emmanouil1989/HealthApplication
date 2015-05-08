@@ -5,4 +5,9 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="SpinnerTextViewItem" parent="@android:style/Widget.TextView" >
+        <item name="android:textStyle" >bold</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+
 </resources>

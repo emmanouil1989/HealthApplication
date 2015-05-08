@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.admin.healthapp.SetTarget"
-    >
+    android:background="#ff303030">
 
 
 
@@ -19,6 +19,7 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:id="@+id/ageText"
+       android:textColor="#ffffffff"
        android:layout_alignParentTop="true"
        android:layout_alignParentLeft="true"
        android:layout_alignParentStart="true"
@@ -30,7 +31,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/age"
         android:layout_marginLeft="140dp"
-
+        android:background="#ffffffff"
         android:inputType="phone"
         android:layout_alignTop="@+id/ageText"
         android:layout_toRightOf="@+id/ageText"
@@ -40,6 +41,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/genderText"
         android:layout_below="@id/ageText"
+        android:textColor="#ffffffff"
         android:layout_marginTop="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Your Gender:"/>
@@ -58,6 +60,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/heightText"
         android:layout_below="@id/genderText"
+        android:textColor="#ffffffff"
         android:layout_marginTop="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Your Height(cm):"/>
@@ -68,6 +71,7 @@
         android:id="@+id/height"
         android:layout_marginLeft="70dp"
         android:inputType="phone"
+        android:background="#ffffffff"
         android:layout_alignTop="@+id/heightText"
         android:layout_toRightOf="@+id/heightText"
         android:layout_toEndOf="@+id/heightText"/>
@@ -78,6 +82,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/weightText"
         android:layout_below="@id/heightText"
+        android:textColor="#ffffffff"
         android:layout_marginTop="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Your Weight(kg):"/>
@@ -88,6 +93,7 @@
         android:id="@+id/weight"
         android:layout_marginLeft="75dp"
         android:inputType="phone"
+        android:background="#ffffffff"
         android:layout_alignTop="@+id/weightText"
         android:layout_toRightOf="@+id/weightText"
         android:layout_toEndOf="@+id/weightText"/>
@@ -98,6 +104,7 @@
         android:id="@+id/dailyActivityText"
         android:layout_below="@id/weightText"
         android:layout_marginTop="30dp"
+        android:textColor="#ffffffff"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Daily Activity:"/>
 
@@ -114,6 +121,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/weightTargetText"
+        android:textColor="#ffffffff"
         android:layout_below="@id/dailyActivityText"
         android:layout_marginTop="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -125,6 +133,7 @@
         android:id="@+id/weightTarget"
         android:layout_marginLeft="100dp"
         android:inputType="phone"
+        android:background="#ffffffff"
         android:layout_alignTop="@+id/weightTargetText"
         android:layout_toRightOf="@+id/weightTargetText"
         android:layout_toEndOf="@+id/weightTargetText"/>
@@ -133,6 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/daysText"
+        android:textColor="#ffffffff"
         android:layout_below="@id/weightTargetText"
         android:layout_marginTop="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -144,6 +154,7 @@
         android:id="@+id/days"
         android:layout_marginLeft="180dp"
         android:inputType="phone"
+        android:background="#ffffffff"
         android:layout_alignTop="@+id/daysText"
         android:layout_toRightOf="@+id/daysText"
         android:layout_toEndOf="@+id/daysText"/>
@@ -153,7 +164,7 @@
         android:id="@+id/calculate"
         android:layout_below="@id/daysText"
         android:layout_marginTop="30dp"
-
+        android:background="@drawable/mybutton"
         android:text="Calculate"/>
 
 

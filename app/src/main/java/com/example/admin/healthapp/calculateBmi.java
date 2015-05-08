@@ -61,8 +61,8 @@ public class calculateBmi extends ActionBarActivity {
                     alertbox.show();
 
                 }else {
-                        Log.v("age",String.valueOf(age));
-                    if (age >= 25 ) {
+
+
                         result = calculateResult(weight, height);
                         bmiInterpetation = interpretBMI(result);
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(calculateBmi.this);
@@ -78,22 +78,7 @@ public class calculateBmi extends ActionBarActivity {
 
                         AlertDialog alertbox1 = builder1.create();
                         alertbox1.show();
-                    }else
-                    {
-                        AlertDialog.Builder builder2 = new AlertDialog.Builder(calculateBmi.this);
-                        builder2.setMessage("You have be above 18");
-                        builder2.setCancelable(false);
-                        builder2.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
-
-                        AlertDialog alertbox2 = builder2.create();
-                        alertbox2.show();
-
-                    }
+                    
 
                 }
 

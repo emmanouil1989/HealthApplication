@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\classes-8cb474c0ddca56764dc9b05aca2edc76533db9dd.jar" />
-    </item>
-    <item
-        jar="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jar="/home/redpower1989/AndroidStudioProjects/HealthApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-705d14dbdafde5ecd9d1f4e3766edc2446d3c6c3.jar" />
+        <dex dex="/home/redpower1989/AndroidStudioProjects/HealthApp/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-78e3480f6cd0b54bdd90025b9ed9f4553d7ca3d9.jar" />
     </item>
     <item
-        jar="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\libs\mpandroidchartlibrary-2-0-9.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="db5a003a317b20269d6fbedcf9ee8917d6a66fff">
-        <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\mpandroidchartlibrary-2-0-9-7596daf8bc49f5ed59e090e80e946f393120998c.jar" />
-    </item>
-    <item
-        jar="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jar="/home/redpower1989/AndroidStudioProjects/HealthApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\classes-cd2cdc83b7ea8cb17cf16b24eee3951b4056f656.jar" />
+        <dex dex="/home/redpower1989/AndroidStudioProjects/HealthApp/app/build/intermediates/pre-dexed/debug/classes-7f30c57ce127e791789c6e148a7978216aebe255.jar" />
     </item>
     <item
-        jar="C:\Users\user.TRJ10-20.002\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jar="/home/redpower1989/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="C:\Users\user.TRJ10-20.002\Desktop\HealthApplication-master\HealthApplication-master\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-c0cba9b9194671487e3006ff820f7de9d1932cc2.jar" />
+        <dex dex="/home/redpower1989/AndroidStudioProjects/HealthApp/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-8e220871efb4a5a297f3fe6727f76a8940ffa80e.jar" />
+    </item>
+    <item
+        jar="/home/redpower1989/AndroidStudioProjects/HealthApp/app/libs/mpandroidchartlibrary-2-0-9.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="db5a003a317b20269d6fbedcf9ee8917d6a66fff">
+        <dex dex="/home/redpower1989/AndroidStudioProjects/HealthApp/app/build/intermediates/pre-dexed/debug/mpandroidchartlibrary-2-0-9-9ac229206a12ef124e16543df93d2d31b91be405.jar" />
+    </item>
+    <item
+        jar="/home/redpower1989/AndroidStudioProjects/HealthApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/home/redpower1989/AndroidStudioProjects/HealthApp/app/build/intermediates/pre-dexed/debug/classes-ff8d62ce385ef12cca49b9e7f057111c55250ca5.jar" />
     </item>
 
 </items>

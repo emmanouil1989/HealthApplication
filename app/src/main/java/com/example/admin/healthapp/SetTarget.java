@@ -2,16 +2,19 @@ package com.example.admin.healthapp;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -158,11 +161,28 @@ public class SetTarget extends ActionBarActivity {
         }
 
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genderList);
+                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genderList){
+                    @Override
+                    public View getView(int position, View convertView, ViewGroup parent) {
+                        View view = super.getView(position, convertView, parent);
+                        TextView text = (TextView) view.findViewById(android.R.id.text1);
+                        text.setTextColor(Color.WHITE);
+                        return view;
+                    }
+                };
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         ArrayAdapter<String> adapter2 =
-                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, factorsList);
+                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, factorsList){
+                    @Override
+                    public View getView(int position, View convertView, ViewGroup parent) {
+                        View view = super.getView(position, convertView, parent);
+                        TextView text = (TextView) view.findViewById(android.R.id.text1);
+                        text.setTextColor(Color.WHITE);
+                        text.setTextSize(15);
+                        return view;
+                    }
+                };
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spGender.setAdapter(adapter);

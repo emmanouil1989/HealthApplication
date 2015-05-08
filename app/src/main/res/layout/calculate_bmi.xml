@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ff000000">
+    android:background="#ff303030">
 
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.admin.healthapp.calculateBmi"
-    android:background="#ff000000"
+    android:background="#ff303030"
 >
 
 
@@ -85,9 +85,10 @@
         android:inputType="phone" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Calculate BMI"
+        android:background="@drawable/mybutton"
         android:id="@+id/resultbtn"
         android:layout_below="@+id/agefield"
         android:layout_centerHorizontal="true"

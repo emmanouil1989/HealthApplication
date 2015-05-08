@@ -216,7 +216,7 @@ public class Calories_Burned extends ActionBarActivity   {
         times.add("60");
 
         ArrayAdapter<String> adapter =
-         new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, times);
+         new ArrayAdapter<String>(this,  R.layout.spinner_item_text, times);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         sp2.setAdapter(adapter);
@@ -256,7 +256,7 @@ public class Calories_Burned extends ActionBarActivity   {
             exerciseList.add(me.getKey().toString());
         }
         ArrayAdapter<String> adapter2 =
-                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, exerciseList);
+                new ArrayAdapter<String>(this, R.layout.spinner_item_text, exerciseList);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         sp1.setAdapter(adapter2);
